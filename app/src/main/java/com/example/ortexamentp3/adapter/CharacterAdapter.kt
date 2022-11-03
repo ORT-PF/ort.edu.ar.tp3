@@ -7,7 +7,7 @@ import com.example.ortexamentp3.Character.CharacterListResponse
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.viewModel.Character
 
-class CharacterAdapter( private val characterList: List<CharacterListResponse>): RecyclerView.Adapter<CharacterViewHolder>() {
+class CharacterAdapter( private val characterList: List<Character>): RecyclerView.Adapter<CharacterViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.character_item, parent, false)

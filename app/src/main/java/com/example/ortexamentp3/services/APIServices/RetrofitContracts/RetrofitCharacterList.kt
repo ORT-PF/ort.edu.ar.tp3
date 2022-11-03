@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface RetrofitCharacterList {
-    @GET("/character")
-    fun getCharacters () : Call<List<CharacterListResponse>>
+    @GET("/api/character")
+    fun getCharacters () : Call<CharacterListResponse>
 }

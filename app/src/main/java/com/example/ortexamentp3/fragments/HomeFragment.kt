@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ortexamentp3.Character.CharacterListResponse
@@ -12,6 +14,7 @@ import com.example.ortexamentp3.R
 import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.services.APIServices.RetrofitClientBuilder
 import com.example.ortexamentp3.services.APIServices.RetrofitContracts.RetrofitCharacterList
+import com.example.ortexamentp3.viewModel.Character
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,25 +36,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        /*val char1 = Character("1","Martin","Mutante","Marte")
-        val char2 = Character("2","Pepe","Humano","Tierra")
-        val char3 = Character("3","Jose","Robot","Marte")
-        val char4 = Character("4","Fede","Animal","Marte")
-
-        val characters = listOf(char1,char2,char3,char4)
-*/
         val retrofitClient = RetrofitClientBuilder.buildService(RetrofitCharacterList::class.java)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
 
-        retrofitClient.getCharacters().enqueue(object: Callback<List<CharacterListResponse>> {
+        retrofitClient.getCharacters().enqueue(object : Callback<CharacterListResponse> {
             override fun onResponse(
-                call: Call<List<CharacterListResponse>>,
-                response: Response<List<CharacterListResponse>>
+                call: Call<CharacterListResponse>,
+                response: Response<CharacterListResponse>
             ) {
                 if (response.isSuccessful) {
-                    val characterList = response.body()
+                    Toast.makeText(activity, "Success Response", Toast.LENGTH_LONG).show()
+                    val characterList = response.body()?.results
 
                     val adapter = characterList?.let { CharacterAdapter(it) }
                     recyclerView.layoutManager = LinearLayoutManager(context)
@@ -60,16 +56,12 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<CharacterListResponse>>, t: Throwable) {
-                TODO("Not yet implemented")
+            override fun onFailure(call: Call<CharacterListResponse>, t: Throwable) {
+                Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
+                val texterror = view.findViewById<TextView>(R.id.textView)
+                texterror.text = t.message
             }
-
-
         })
-
-        //val adapter = CharacterAdapter(characters)
-        //recyclerView.adapter = adapter
-        //recyclerView.layoutManager = LinearLayoutManager(context)
 
     }
 

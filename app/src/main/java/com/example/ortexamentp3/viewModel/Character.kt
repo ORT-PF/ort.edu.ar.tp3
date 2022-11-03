@@ -1,7 +1,14 @@
 package com.example.ortexamentp3.viewModel
 
-data class Character(val id: String, val name: String, val especies: String, val origin: String)
+import com.google.gson.annotations.SerializedName
 
-//id,name,status,species,type, origin
+data class Character(
+
+    @SerializedName("id") var id : String?,
+    @SerializedName("name") var name : String?,
+    @SerializedName("especies") var especies : String?,
+    @SerializedName("origin") var origin : Origin
+
+)
 
 
