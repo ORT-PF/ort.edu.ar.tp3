@@ -2,4 +2,8 @@
     <string name="app_name">ort.examen.tp3</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="night_mode"> Night mode </string>
+    <string name="search_enabled"> Buscador habilitado  </string>
+    <string name="add_favourites_enabled"> Permitir agregar favoritos  </string>
+    <string name="settings"> Settings  </string>
 </resources>
