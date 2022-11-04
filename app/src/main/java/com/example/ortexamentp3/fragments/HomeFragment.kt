@@ -9,12 +9,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ortexamentp3.Character.CharacterListResponse
+import com.example.ortexamentp3.services.APIServices.APIResponses.Character.CharacterListResponse
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.services.APIServices.RetrofitClientBuilder
 import com.example.ortexamentp3.services.APIServices.RetrofitContracts.RetrofitCharacterList
-import com.example.ortexamentp3.viewModel.Character
+import com.example.ortexamentp3.domain.viewModel.Character
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
