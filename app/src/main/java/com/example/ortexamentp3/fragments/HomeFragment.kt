@@ -46,7 +46,6 @@ class HomeFragment : Fragment() {
                 response: Response<CharacterListResponse>
             ) {
                 if (response.isSuccessful) {
-                    Toast.makeText(activity, "Success Response", Toast.LENGTH_LONG).show()
                     val characterList = response.body()?.results
 
                     val adapter = characterList?.let { CharacterAdapter(it) }
@@ -58,8 +57,6 @@ class HomeFragment : Fragment() {
 
             override fun onFailure(call: Call<CharacterListResponse>, t: Throwable) {
                 Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
-                val texterror = view.findViewById<TextView>(R.id.textView)
-                texterror.text = t.message
             }
         })
 
