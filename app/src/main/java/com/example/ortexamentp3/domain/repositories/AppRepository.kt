@@ -2,13 +2,16 @@ package com.example.ortexamentp3.domain.repositories
 
 import android.content.Context
 import androidx.room.Room
+import com.example.ortexamentp3.domain.dao.FavouriteCharacterDao
 import com.example.ortexamentp3.domain.dao.UserDao
 import com.example.ortexamentp3.domain.database.AppDatabase
+import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.models.User
 
-class UserRepository private constructor(private val appDatabase: AppDatabase) {
+class AppRepository private constructor(private val appDatabase: AppDatabase) {
 
     private val userDao : UserDao = appDatabase.userDao()
+    private val favCharDao : FavouriteCharacterDao = appDatabase.favCharDao()
 
     fun addUser(user: User) : Long{
         val uId = userDao.insert(user)
@@ -27,10 +30,22 @@ class UserRepository private constructor(private val appDatabase: AppDatabase) {
         return userDao.getAll()
     }
 
-    companion object{
-        private var userRepository: UserRepository? = null
+    fun getFavCharsIdsByUserId(userId : Int) : Array<Int>{
+        return favCharDao.getFavCharacterIdsByUserId(userId)
+    }
 
-        fun getInstance(context: Context) : UserRepository{
+    fun insertFavouriteCharacter(favouriteCharacter : FavouriteCharacter){
+        favCharDao.insertFavChar(favouriteCharacter)
+    }
+
+    fun deleteFavouriteCharacter(favouriteCharacter: FavouriteCharacter){
+        favCharDao.deleteFavChar(favouriteCharacter)
+    }
+
+    companion object{
+        private var userRepository: AppRepository? = null
+
+        fun getInstance(context: Context) : AppRepository{
             return userRepository ?: kotlin.run{
 
                 val db = Room.databaseBuilder(
@@ -39,8 +54,8 @@ class UserRepository private constructor(private val appDatabase: AppDatabase) {
                     "appDatabase"
                 ).allowMainThreadQueries().build()
 
-                val createdUserRepository = UserRepository(db)
-                userRepository = UserRepository(db)
+                val createdUserRepository = AppRepository(db)
+                userRepository = AppRepository(db)
                 createdUserRepository
             }
         }
