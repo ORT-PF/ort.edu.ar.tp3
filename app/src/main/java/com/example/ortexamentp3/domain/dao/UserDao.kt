@@ -11,8 +11,8 @@ interface UserDao {
     @Query("SELECT * FROM user")
     fun getAll(): List<User>
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<User>
+    @Query("SELECT * FROM user WHERE uid = :userId")
+    fun GetUserById(userId : Int) : User
 
     @Query("SELECT * FROM user WHERE name LIKE :userName AND " +
             "password LIKE :userPassword LIMIT 1")

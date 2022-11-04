@@ -15,6 +15,10 @@ class UserRepository private constructor(private val appDatabase: AppDatabase) {
         return uId
     }
 
+    fun getUserById(userId : Int) : User{
+        return userDao.GetUserById(userId)
+    }
+
      fun removeUser(user: User){
         userDao.delete(user)
     }
