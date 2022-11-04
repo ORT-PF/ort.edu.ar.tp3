@@ -68,13 +68,19 @@
             android:id="@+id/loginFragmentbutton"
             android:layout_width="249dp"
             android:layout_height="45dp"
+            android:background="#009688"
+            android:backgroundTint="#009688"
+            android:drawableTint="#009688"
             android:fontFamily="casual"
+            android:foregroundTint="#009688"
             android:text="@string/fragment_login_button_text"
+            app:iconTint="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.419"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginFragmentForgottenPassword"
-            app:layout_constraintVertical_bias="0.291" />
+            app:layout_constraintVertical_bias="0.291"
+            app:strokeColor="#009688" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -19,7 +19,7 @@ interface UserDao {
     fun findByName(userName: String, userPassword: String): User
 
     @Insert(entity = User::class)
-    fun insert(user: User)
+    fun insert(user: User) : Long
 
     @Delete
     fun delete(user: User)

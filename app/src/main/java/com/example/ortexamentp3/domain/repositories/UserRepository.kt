@@ -10,11 +10,12 @@ class UserRepository private constructor(private val appDatabase: AppDatabase) {
 
     private val userDao : UserDao = appDatabase.userDao()
 
-    fun addUser(user: User){
-        userDao.insert(user)
+    fun addUser(user: User) : Long{
+        val uId = userDao.insert(user)
+        return uId
     }
 
-    fun removeUser(user: User){
+     fun removeUser(user: User){
         userDao.delete(user)
     }
 

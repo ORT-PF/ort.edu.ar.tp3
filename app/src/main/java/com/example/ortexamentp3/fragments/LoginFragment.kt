@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.domain.models.User
 import com.example.ortexamentp3.domain.repositories.UserRepository
+import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
     private lateinit var vista : View
@@ -44,8 +46,9 @@ class LoginFragment : Fragment() {
         loginButton.setOnClickListener{
             val userName = userText.text.toString()
             val userPassword = userText.text.toString()
+            var users : List<User>?
 
-            userRepository.addUser(User(0, userName, userPassword))
+            val userId = userRepository.addUser(User(0, userName, userPassword))
 
             val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
             vista.findNavController().navigate(action)
