@@ -8,12 +8,17 @@
     android:backgroundTintMode="screen"
     tools:context=".fragments.SettingsFragment"
     >
+
     <ImageView
         android:id="@+id/imagen_settings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_settings" />
+        android:src="@drawable/background_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/night_mode"
@@ -72,17 +77,23 @@
         app:layout_constraintGuide_end="444dp" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="397dp"
+        android:id="@+id/toolbar2"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="@drawable/back_arrow"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="5dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
