@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ortexamentp3.services.APIServices.APIResponses.Character.CharacterListResponse
@@ -15,11 +16,13 @@ import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.services.APIServices.RetrofitClientBuilder
 import com.example.ortexamentp3.services.APIServices.RetrofitContracts.RetrofitCharacterList
 import com.example.ortexamentp3.domain.viewModel.Character
+import com.example.ortexamentp3.listener.OnCharacterClickedListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnCharacterClickedListener {
+    private var userId : Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +42,7 @@ class HomeFragment : Fragment() {
         val retrofitClient = RetrofitClientBuilder.buildService(RetrofitCharacterList::class.java)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
+        userId = arguments?.getLong("userId")
 
         retrofitClient.getCharacters().enqueue(object : Callback<CharacterListResponse> {
             override fun onResponse(
@@ -48,7 +52,7 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     val characterList = response.body()?.results
 
-                    val adapter = characterList?.let { CharacterAdapter(it) }
+                    val adapter = characterList?.let { CharacterAdapter(it,this@HomeFragment)}
                     recyclerView.layoutManager = LinearLayoutManager(context)
                     recyclerView.adapter = adapter
 
@@ -57,13 +61,18 @@ class HomeFragment : Fragment() {
 
             override fun onFailure(call: Call<CharacterListResponse>, t: Throwable) {
                 Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
+
+
             }
         })
-
     }
 
     override fun onStart(){
         super.onStart()
+    }
+
+    override fun onProductSelected(character: Character) {
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(character, userId!!))
     }
 
 

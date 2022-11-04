@@ -13,6 +13,9 @@ interface FavouriteCharacterDao {
     @Query("SELECT Favouritecharacter.characterId FROM Favouritecharacter WHERE uid = :userId")
     fun getFavCharacterIdsByUserId(userId : Int) : Array<Int>
 
+    @Query("SELECT * FROM Favouritecharacter WHERE uid = :userId")
+    fun getFavCharacters(userId : Int) : List<FavouriteCharacter>
+
     @Insert(entity = FavouriteCharacter::class)
     fun insertFavChar(favChar: FavouriteCharacter) : Long
 

@@ -26,16 +26,24 @@ class AppRepository private constructor(private val appDatabase: AppDatabase) {
         userDao.delete(user)
     }
 
+    fun getAllFavCharsByUser(userId: Int) : List<FavouriteCharacter>{
+        return favCharDao.getFavCharacters(userId)
+    }
+
     fun getAllUsers() : List<User>{
         return userDao.getAll()
+    }
+
+    fun getByUserNameAndPassword(userName : String, password : String) : User{
+        return userDao.findByName(userName, password)
     }
 
     fun getFavCharsIdsByUserId(userId : Int) : Array<Int>{
         return favCharDao.getFavCharacterIdsByUserId(userId)
     }
 
-    fun insertFavouriteCharacter(favouriteCharacter : FavouriteCharacter){
-        favCharDao.insertFavChar(favouriteCharacter)
+    fun insertFavouriteCharacter(favouriteCharacter : FavouriteCharacter) : Long{
+        return favCharDao.insertFavChar(favouriteCharacter)
     }
 
     fun deleteFavouriteCharacter(favouriteCharacter: FavouriteCharacter){
