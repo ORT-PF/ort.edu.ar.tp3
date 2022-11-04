@@ -21,20 +21,21 @@ class SettingsFragment : Fragment() {
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
         view1 = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        buttonGoToHome = view1.findViewById(R.id.backButton)
+        //buttonGoToHome = view1.findViewById(R.id.backButton)
 
         return view1
     }
+   //override fun onStart() {
+     //   super.onStart()
 
-    override fun onStart() {
-        super.onStart()
-
-        buttonGoToHome.setOnClickListener{
+        //buttonGoToHome.setOnClickListener{
             //val action = SettingsFragmentDirections.action_settingsFragment3_to_homeFragment
-            view1.findNavController().navigate(R.id.action_settingsFragment_to_homeFragment)
-        }
-    }
+          //  view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
+    //}
+
 }
