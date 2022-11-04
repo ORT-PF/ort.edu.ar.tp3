@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.models.User
 import com.example.ortexamentp3.domain.repositories.AppRepository
 
@@ -17,7 +18,7 @@ class LoginFragment : Fragment() {
     private lateinit var userText : EditText
     private lateinit var passwordText : EditText
     private lateinit var loginButton : Button
-    private lateinit var userRepository: AppRepository
+    private lateinit var appRepository: AppRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,15 +40,23 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        userRepository = AppRepository.getInstance(requireContext())
+        appRepository = AppRepository.getInstance(requireContext())
 
         loginButton.setOnClickListener{
             val userName = userText.text.toString()
             val userPassword = userText.text.toString()
 
-            val userId = userRepository.addUser(User(0, userName, userPassword))
+            val user = appRepository.getByUserNameAndPassword(userName, userPassword)
+            var userId : Long? = null
 
-            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+            if(user == null) {
+                userId = appRepository.addUser(User(0, userName, userPassword))
+            }
+            else{
+                userId = user.uid.toLong()
+            }
+
+            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(userId!!)
             vista.findNavController().navigate(action)
         }
     }
