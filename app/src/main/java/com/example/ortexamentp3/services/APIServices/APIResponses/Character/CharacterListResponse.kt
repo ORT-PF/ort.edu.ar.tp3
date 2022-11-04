@@ -1,6 +1,6 @@
-package com.example.ortexamentp3.Character
+package com.example.ortexamentp3.services.APIServices.APIResponses.Character
 
-import com.example.ortexamentp3.viewModel.Character
+import com.example.ortexamentp3.domain.viewModel.Character
 import com.google.gson.annotations.SerializedName
 import java.util.*
 

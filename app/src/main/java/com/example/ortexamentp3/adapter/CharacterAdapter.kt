@@ -3,9 +3,9 @@ package com.example.ortexamentp3.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ortexamentp3.Character.CharacterListResponse
+import com.example.ortexamentp3.services.APIServices.APIResponses.Character.CharacterListResponse
 import com.example.ortexamentp3.R
-import com.example.ortexamentp3.viewModel.Character
+import com.example.ortexamentp3.domain.viewModel.Character
 
 class CharacterAdapter( private val characterList: List<Character>): RecyclerView.Adapter<CharacterViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {

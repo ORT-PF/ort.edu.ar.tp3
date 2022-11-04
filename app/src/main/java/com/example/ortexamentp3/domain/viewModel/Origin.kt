@@ -1,4 +1,4 @@
-package com.example.ortexamentp3.viewModel
+package com.example.ortexamentp3.domain.viewModel
 
 import com.google.gson.annotations.SerializedName
 
