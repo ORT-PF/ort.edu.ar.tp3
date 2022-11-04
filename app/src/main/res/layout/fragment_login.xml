@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/loginFragmentTextView"
+            android:layout_width="197dp"
+            android:layout_height="52dp"
+            android:fontFamily="casual"
+            android:text="Rick and Morty"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.429"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.162" />
+
+        <EditText
+            android:id="@+id/loginFragmentUserText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/fragment_login_user_hint"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginFragmentTextView" />
+
+        <EditText
+            android:id="@+id/loginFragmentPasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/fragment_login_password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginFragmentUserText" />
+
+        <TextView
+            android:id="@+id/loginFragmentForgottenPassword"
+            android:layout_width="183dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="casual"
+            android:text="@string/fragment_login_password_forgotten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.298"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginFragmentPasswordText" />
+
+        <Button
+            android:id="@+id/loginFragmentbutton"
+            android:layout_width="249dp"
+            android:layout_height="45dp"
+            android:background="#009688"
+            android:backgroundTint="#009688"
+            android:drawableTint="#009688"
+            android:fontFamily="casual"
+            android:foregroundTint="#009688"
+            android:text="@string/fragment_login_button_text"
+            app:iconTint="#009688"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.419"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginFragmentForgottenPassword"
+            app:layout_constraintVertical_bias="0.291"
+            app:strokeColor="#009688" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
