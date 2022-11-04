@@ -32,7 +32,7 @@ class UserRepository private constructor(private val appDatabase: AppDatabase) {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "appDatabase"
-                ).build()
+                ).allowMainThreadQueries().build()
 
                 val createdUserRepository = UserRepository(db)
                 userRepository = UserRepository(db)
