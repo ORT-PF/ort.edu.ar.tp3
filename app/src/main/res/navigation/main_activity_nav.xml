@@ -9,7 +9,14 @@
         android:id="@+id/detailFragment"
         android:name="com.example.ortexamentp3.fragments.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.example.ortexamentp3.domain.viewModel.Character" />
+    </fragment>
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.example.ortexamentp3.fragments.FavouritesFragment"
