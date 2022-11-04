@@ -47,7 +47,7 @@ class LoginFragment : Fragment() {
 
             val userId = userRepository.addUser(User(0, userName, userPassword))
 
-            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(userId)
             vista.findNavController().navigate(action)
         }
     }

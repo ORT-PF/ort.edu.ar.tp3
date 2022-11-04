@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ortexamentp3.services.APIServices.APIResponses.Character.CharacterListResponse
@@ -20,6 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment() {
+    val args : ConfirmationFragmentArgs  by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
