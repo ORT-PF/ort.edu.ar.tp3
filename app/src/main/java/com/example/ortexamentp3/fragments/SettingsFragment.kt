@@ -9,33 +9,31 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
-
 class SettingsFragment : Fragment() {
 
 
     lateinit var view1: View
-    lateinit var buttonGoToHome : Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    lateinit var buttonGoToHome: Button
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
         view1 = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        //buttonGoToHome = view1.findViewById(R.id.backButton)
+        buttonGoToHome = view1.findViewById(R.id.backButton)
 
         return view1
     }
-   //override fun onStart() {
-     //   super.onStart()
 
-        //buttonGoToHome.setOnClickListener{
-            //val action = SettingsFragmentDirections.action_settingsFragment3_to_homeFragment
-          //  view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
-    //}
+    override fun onStart() {
+        super.onStart()
+
+        buttonGoToHome.setOnClickListener {
+            view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
+        }
+
+    }
 
 }
