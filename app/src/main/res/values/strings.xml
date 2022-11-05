@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">ort.examen.tp3</string>
+    <string name="app_name">Rick and Morty</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="fragment_login_hello">Rick and Morty</string>
+    <!-- <string name="fragment_login_hello">Rick and Morty</string>-->
     <string name="fragment_login_user_hint">Usuario</string>
     <string name="fragment_login_password_hint">Contraseña</string>
     <string name="fragment_login_password_forgotten">¿Olvidaste tu contraseña?</string>
