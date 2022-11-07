@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity
 import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.adapter.FavCharacterAdapter
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
@@ -35,7 +36,7 @@ class FavouritesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        userId = arguments?.getLong("userId")
+        userId = MainActivity.getCurrentUserId()
         appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favourites, container, false)
@@ -46,8 +47,6 @@ class FavouritesFragment : Fragment() {
 
         val retrofitClient = RetrofitClientBuilder.buildService(RetrofitFavCharacterList::class.java)
         val recyclerView = view.findViewById<RecyclerView>(R.id.detailsRecycler)
-
-        userId = arguments?.getLong("userId")
 
         val favCharactersByUser = appRepository.getAllFavCharsByUser(userId!!.toInt())
         val ids = ArrayList<Int>()
