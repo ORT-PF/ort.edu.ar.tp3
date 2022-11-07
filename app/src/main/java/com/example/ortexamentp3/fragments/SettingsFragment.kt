@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
@@ -17,20 +18,18 @@ class SettingsFragment : Fragment() {
     lateinit var view1: View
     lateinit var buttonGoToHome: Button
     lateinit var nightMode: Switch
-
+    lateinit var sacarFondo: Switch
+    lateinit var fondoSettings: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         view1 = inflater.inflate(R.layout.fragment_settings, container, false)
-
-
         buttonGoToHome = view1.findViewById(R.id.backButton)
         nightMode = view1.findViewById(R.id.night_mode)
-
-
-
+        sacarFondo = view1.findViewById(R.id.sacar_fondo)
+        fondoSettings = view1.findViewById(R.id.imagen_settings)
 
         return view1
     }
@@ -50,6 +49,16 @@ class SettingsFragment : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
+
+        sacarFondo.setOnCheckedChangeListener { _, _ ->
+            if (sacarFondo.isChecked){
+                fondoSettings.visibility = View.INVISIBLE
+            }else{
+                fondoSettings.visibility = View.VISIBLE
+            }
+        }
+
+
 
     }
 

@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background_settings"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_enabled"
-        app:layout_constraintBottom_toTopOf="@+id/add_favourites"
+        app:layout_constraintBottom_toTopOf="@+id/sacar_fondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -49,10 +50,10 @@
         tools:ignore="MissingConstraints" />
 
     <Switch
-        android:id="@+id/add_favourites"
+        android:id="@+id/sacar_fondo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_favourites_enabled"
+        android:text="@string/sacar_fondo_settings"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
