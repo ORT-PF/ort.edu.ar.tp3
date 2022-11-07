@@ -32,6 +32,7 @@ class FavouritesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         userId = arguments?.getLong("userId")
+        appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favourites, container, false)
     }
