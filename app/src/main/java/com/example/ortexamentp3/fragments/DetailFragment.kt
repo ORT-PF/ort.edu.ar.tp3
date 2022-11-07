@@ -27,6 +27,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_detail, container, false)
         return vista
@@ -70,7 +71,7 @@ class DetailFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        appRepository = AppRepository.getInstance(requireContext())
+
 
     }
 
