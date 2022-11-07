@@ -35,11 +35,17 @@ class LoginFragment : Fragment() {
         passwordText = vista.findViewById(R.id.loginFragmentPasswordText)
         loginButton = vista.findViewById(R.id.loginFragmentbutton)
 
+
         return vista
     }
 
     override fun onStart() {
         super.onStart()
+
+        val userId = MainActivity.getCurrentUserId()
+        if(userId != null){
+            MainActivity.endSession()
+        }
 
         appRepository = AppRepository.getInstance(requireContext())
 
