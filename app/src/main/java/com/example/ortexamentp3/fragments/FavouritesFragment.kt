@@ -50,7 +50,6 @@ class FavouritesFragment : Fragment() {
         userId = arguments?.getLong("userId")
 
         val favCharactersByUser = appRepository.getAllFavCharsByUser(userId!!.toInt())
-
         val ids = ArrayList<Int>()
 
         for (fav in favCharactersByUser) {
