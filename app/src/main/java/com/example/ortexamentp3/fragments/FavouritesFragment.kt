@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity
 import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.repositories.AppRepository
@@ -31,7 +32,7 @@ class FavouritesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        userId = arguments?.getLong("userId")
+        userId = MainActivity.getCurrentUserId()
         appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favourites, container, false)
