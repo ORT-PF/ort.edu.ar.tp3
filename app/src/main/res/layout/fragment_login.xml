@@ -4,41 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".fragments.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
             android:id="@+id/loginFragmentTextView"
             android:layout_width="197dp"
             android:layout_height="52dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/architects_daughter"
             android:text="Iniciar Sesión"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.42"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginFragmentTextView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.162" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/loginFragmentUserText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="36dp"
+            android:background="#B3FFFFFF"
             android:contextClickable="false"
             android:ems="10"
             android:fontFamily="casual"
             android:hint="@string/fragment_login_user_hint"
             android:inputType="textPersonName"
             android:textColor="@color/black"
-            android:background="#B3FFFFFF"
             android:textColorHint="?android:attr/textColorHintInverse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -49,7 +48,7 @@
             android:id="@+id/loginFragmentPasswordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="36dp"
             android:background="#B3FFFFFF"
             android:ems="10"
             android:fontFamily="casual"
@@ -62,17 +61,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginFragmentUserText" />
 
-
         <TextView
             android:id="@+id/loginFragmentForgottenPassword"
             android:layout_width="183dp"
             android:layout_height="26dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="casual"
             android:text="@string/fragment_login_password_forgotten"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.298"
+            app:layout_constraintHorizontal_bias="0.328"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginFragmentPasswordText" />
 
@@ -89,10 +87,9 @@
             app:iconTint="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.419"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginFragmentForgottenPassword"
-            app:layout_constraintVertical_bias="0.246"
+            app:layout_constraintVertical_bias="0.144"
             app:strokeColor="#009688" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

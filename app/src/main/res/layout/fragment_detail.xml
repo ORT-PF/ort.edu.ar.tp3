@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.DetailFragment">
+    tools:context=".fragments.DetailFragment"
+    android:background="@drawable/fondo5">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
@@ -30,6 +31,8 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="20dp"
             android:text="Status"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="24sp"></TextView>
 
         <TextView
@@ -39,6 +42,8 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="30dp"
             android:text="Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="24sp"></TextView>
 
         <TextView
@@ -47,6 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:text="Species"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="24sp"></TextView>
 
         <TextView
@@ -55,6 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:text="Origin"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="24sp"></TextView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -64,6 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.829"
@@ -77,6 +88,8 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/fragment_details_button_text"
         android:fontFamily="casual"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonAddToFavorites"
         app:layout_constraintHorizontal_bias="0.318"
