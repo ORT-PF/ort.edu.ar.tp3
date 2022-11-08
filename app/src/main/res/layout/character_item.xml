@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombre"
+            android:fontFamily="@font/architects_daughter"
             android:textSize="24sp">
         </TextView>
 
@@ -34,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Status:"
-            android:textSize="24sp">
+            android:fontFamily="@font/architects_daughter"
+            android:textSize="20sp">
         </TextView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

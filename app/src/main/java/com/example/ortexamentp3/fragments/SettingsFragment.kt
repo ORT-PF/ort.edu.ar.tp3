@@ -34,19 +34,20 @@ class SettingsFragment : Fragment() {
 
         (activity as MainActivity?)!!.hideMenu()
 
+        buttonGoToHome.setOnClickListener {
+
+            var action = SettingsFragmentDirections.actionSettingsFragmentToHomeFragment();
+            view1.findNavController().navigate(action)
+
+        }
+
         return view1
     }
 
     override fun onStart() {
         super.onStart()
 
-        buttonGoToHome.setOnClickListener {
 
-            var action = SettingsFragmentDirections.actionSettingsFragmentToHomeFragment();
-            view1.findNavController().navigate(action)
-
-            //view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
-        }
 
 
         nightMode.setOnCheckedChangeListener { _, _ ->

@@ -1,9 +1,8 @@
 package com.example.ortexamentp3.activities
 
-import android.graphics.drawable.ColorDrawable
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -57,10 +56,6 @@ class MainActivity : AppCompatActivity(), DrawerController {
             return false
         }
 
-       // override fun onCreateOptionsMenu(menu: Menu): Boolean {
-         //   menuInflater.inflate(R.menu.basic_menu, menu)
-        //    return true
-      //  }
     companion object{
         private var currentUserId : Long? = null
 
@@ -91,15 +86,6 @@ class MainActivity : AppCompatActivity(), DrawerController {
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
 
     }
-
-    override fun hideHamburger() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
-    }
-
-    override fun showHamburger() {
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
 
 }
 

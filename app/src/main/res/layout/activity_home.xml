@@ -25,6 +25,7 @@
         app:menu="@menu/basic_menu"
         android:fitsSystemWindows="true"
 
+
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>
