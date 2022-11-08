@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.repositories.AppRepository
 
@@ -27,6 +28,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_detail, container, false)
         return vista
@@ -52,7 +54,7 @@ class DetailFragment : Fragment() {
         val imgUrl = character.image
         val characterImage = view.findViewById<ImageView>(R.id.characterDetail_image)
 
-        userId = arguments?.getLong("userId")
+        userId = MainActivity.getCurrentUserId()
 
         Glide.with(view)
             .load(imgUrl)
@@ -70,12 +72,12 @@ class DetailFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        appRepository = AppRepository.getInstance(requireContext())
+
 
     }
 
     private fun navigateToHomeFragment(){
-        val actionBack = DetailFragmentDirections.actionDetailFragmentToHomeFragment(userId!!)
+        val actionBack = DetailFragmentDirections.actionDetailFragmentToHomeFragment()
         vista.findNavController().navigate((actionBack))
     }
 }

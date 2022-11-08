@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.models.User
 import com.example.ortexamentp3.domain.repositories.AppRepository
@@ -34,11 +35,17 @@ class LoginFragment : Fragment() {
         passwordText = vista.findViewById(R.id.loginFragmentPasswordText)
         loginButton = vista.findViewById(R.id.loginFragmentbutton)
 
+
         return vista
     }
 
     override fun onStart() {
         super.onStart()
+
+        val userId = MainActivity.getCurrentUserId()
+        if(userId != null){
+            MainActivity.endSession()
+        }
 
         appRepository = AppRepository.getInstance(requireContext())
 
@@ -56,7 +63,9 @@ class LoginFragment : Fragment() {
                 userId = user.uid.toLong()
             }
 
-            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(userId!!)
+            MainActivity.setCurrentUserId(userId!!)
+
+            val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
             vista.findNavController().navigate(action)
         }
     }
