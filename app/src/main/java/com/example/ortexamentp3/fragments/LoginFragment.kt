@@ -47,6 +47,9 @@ class LoginFragment : Fragment() {
             MainActivity.endSession()
         }
 
+        userText.text = null
+        passwordText.text = null
+
         appRepository = AppRepository.getInstance(requireContext())
 
         loginButton.setOnClickListener{
