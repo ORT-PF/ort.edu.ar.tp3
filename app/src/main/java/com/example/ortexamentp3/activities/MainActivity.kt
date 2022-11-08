@@ -1,8 +1,8 @@
 package com.example.ortexamentp3.activities
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -11,12 +11,14 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.ortexamentp3.R
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(), DrawerController {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_home)
 
@@ -24,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             drawerLayout = findViewById(R.id.drawer_layout)
             navigationView = findViewById(R.id.nav_view)
             navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
-
             setupDrawerLayout()
         }
 
@@ -55,10 +56,6 @@ class MainActivity : AppCompatActivity() {
             return false
         }
 
-       // override fun onCreateOptionsMenu(menu: Menu): Boolean {
-         //   menuInflater.inflate(R.menu.basic_menu, menu)
-        //    return true
-      //  }
     companion object{
         private var currentUserId : Long? = null
 
@@ -77,6 +74,19 @@ class MainActivity : AppCompatActivity() {
            }
 
     }
+
+    override fun hideMenu() {
+        supportActionBar?.hide()
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+
+    }
+
+    override fun showMenu() {
+        supportActionBar?.show()
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+
+    }
+
 }
 
 
