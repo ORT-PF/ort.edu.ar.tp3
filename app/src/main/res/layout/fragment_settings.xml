@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ver_personajes"
-        app:layout_constraintBottom_toTopOf="@+id/add_favourites"
+        app:layout_constraintBottom_toTopOf="@+id/quitar_boton_favoritos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -49,7 +49,7 @@
         tools:ignore="MissingConstraints" />
 
     <Switch
-        android:id="@+id/add_favourites"
+        android:id="@+id/quitar_boton_favoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_favourites_enabled"
