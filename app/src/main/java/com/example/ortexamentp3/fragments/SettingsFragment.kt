@@ -11,6 +11,8 @@ import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity
+
 class SettingsFragment : Fragment() {
 
 
@@ -30,7 +32,7 @@ class SettingsFragment : Fragment() {
         nightMode = view1.findViewById(R.id.night_mode)
 
 
-
+        (activity as MainActivity?)!!.hideMenu()
 
         return view1
     }
@@ -39,7 +41,11 @@ class SettingsFragment : Fragment() {
         super.onStart()
 
         buttonGoToHome.setOnClickListener {
-            view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
+
+            var action = SettingsFragmentDirections.actionSettingsFragmentToHomeFragment();
+            view1.findNavController().navigate(action)
+
+            //view1.findNavController().navigate(R.id.action_settingsFragment2_to_homeFragment)
         }
 
 
@@ -51,6 +57,12 @@ class SettingsFragment : Fragment() {
             }
         }
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        (activity as MainActivity?)!!.showMenu()
     }
 
 

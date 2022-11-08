@@ -10,7 +10,6 @@ import android.widget.EditText
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.activities.MainActivity
-import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.models.User
 import com.example.ortexamentp3.domain.repositories.AppRepository
 
@@ -35,6 +34,7 @@ class LoginFragment : Fragment() {
         passwordText = vista.findViewById(R.id.loginFragmentPasswordText)
         loginButton = vista.findViewById(R.id.loginFragmentbutton)
 
+        (activity as MainActivity?)!!.hideMenu()
 
         return vista
     }
@@ -68,5 +68,11 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
             vista.findNavController().navigate(action)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        (activity as MainActivity?)!!.showMenu()
     }
 }

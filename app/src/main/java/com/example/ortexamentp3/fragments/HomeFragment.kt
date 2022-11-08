@@ -20,6 +20,8 @@ import com.example.ortexamentp3.listener.OnCharacterClickedListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.ortexamentp3.activities.MainActivity
+
 
 class HomeFragment : Fragment(), OnCharacterClickedListener {
 
