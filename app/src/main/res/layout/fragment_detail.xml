@@ -73,7 +73,7 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <Button
+    <!--<Button
         android:id="@+id/buttonAddToFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintVertical_bias="0.921" />-->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -111,6 +111,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddToFavourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_fav"
+        app:backgroundTint="@color/purple_500"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="637dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintVertical_bias="0.921" />
+
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
