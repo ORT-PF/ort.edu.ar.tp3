@@ -59,6 +59,24 @@ class MainActivity : AppCompatActivity() {
          //   menuInflater.inflate(R.menu.basic_menu, menu)
         //    return true
       //  }
+    companion object{
+        private var currentUserId : Long? = null
+
+           fun setCurrentUserId(userId : Long){
+               if(currentUserId == null){
+                   currentUserId = userId
+               }
+           }
+
+           fun getCurrentUserId() : Long?{
+               return currentUserId
+           }
+
+           fun endSession(){
+               currentUserId = null
+           }
+
     }
+}
 
 

@@ -22,7 +22,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment(), OnCharacterClickedListener {
-    private var userId : Long? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +40,6 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
 
         val retrofitClient = RetrofitClientBuilder.buildService(RetrofitCharacterList::class.java)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-
-        userId = arguments?.getLong("userId")
 
         retrofitClient.getCharacters().enqueue(object : Callback<CharacterListResponse> {
             override fun onResponse(
@@ -72,7 +69,7 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
     }
 
     override fun onProductSelected(character: Character) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(character, userId!!))
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(character))
     }
 
 
