@@ -58,6 +58,17 @@ class MainActivity : AppCompatActivity(), DrawerController {
 
     companion object{
         private var currentUserId : Long? = null
+        private var verPersonajes : Boolean = true
+
+
+
+            fun setVerPersonajes(valor: Boolean){
+                this.verPersonajes = valor
+            }
+
+            fun getVerPersonajes() : Boolean{
+                return verPersonajes;
+            }
 
            fun setCurrentUserId(userId : Long){
                if(currentUserId == null){

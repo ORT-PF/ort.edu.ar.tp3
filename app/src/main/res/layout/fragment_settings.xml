@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/night_mode"
-        app:layout_constraintBottom_toTopOf="@+id/search_enabled"
+        app:layout_constraintBottom_toTopOf="@+id/ver_personajes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -37,10 +37,10 @@
 
 
     <Switch
-        android:id="@+id/search_enabled"
+        android:id="@+id/ver_personajes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/search_enabled"
+        android:text="@string/ver_personajes"
         app:layout_constraintBottom_toTopOf="@+id/add_favourites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
