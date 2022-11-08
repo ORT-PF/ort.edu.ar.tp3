@@ -6,8 +6,21 @@
     tools:context=".fragments.FavouritesFragment"
     android:background="@drawable/fondo">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/architects_daughter"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:text="Hola, estos son tus personajes favoritos!!!" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/detailsRecycler"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

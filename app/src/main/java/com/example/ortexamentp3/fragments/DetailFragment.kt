@@ -30,6 +30,8 @@ class DetailFragment : Fragment() {
     ): View? {
         appRepository = AppRepository.getInstance(requireContext())
         // Inflate the layout for this fragment
+        (activity as MainActivity?)!!.hideMenu()
+
         vista = inflater.inflate(R.layout.fragment_detail, container, false)
         return vista
     }
@@ -79,5 +81,11 @@ class DetailFragment : Fragment() {
     private fun navigateToHomeFragment(){
         val actionBack = DetailFragmentDirections.actionDetailFragmentToHomeFragment()
         vista.findNavController().navigate((actionBack))
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        (activity as MainActivity?)!!.showMenu()
     }
 }

@@ -9,12 +9,13 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
-        android:layout_width="300dp"
-        android:layout_height="500dp"
+        android:layout_width="296dp"
+        android:layout_height="492dp"
         android:layout_gravity="center"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="92dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -31,9 +32,10 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="20dp"
             android:text="Status"
+            android:fontFamily="@font/architects_daughter"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp"></TextView>
+            android:textSize="23sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/textViewDetailName"
@@ -42,9 +44,10 @@
             android:layout_marginStart="75dp"
             android:layout_marginTop="30dp"
             android:text="Name"
+            android:fontFamily="@font/architects_daughter"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp"></TextView>
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/textViewDetailSpecies"
@@ -52,9 +55,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:text="Species"
+            android:fontFamily="@font/architects_daughter"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp"></TextView>
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/textViewDetailOrigin"
@@ -62,9 +66,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:text="Origin"
+            android:fontFamily="@font/architects_daughter"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="24sp"></TextView>
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -82,21 +87,30 @@
         app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
         app:layout_constraintVertical_bias="0.921" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/backToHomeFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/fragment_details_button_text"
-        android:fontFamily="casual"
         android:textColor="@color/black"
-        android:textStyle="bold"
+        android:foreground="@drawable/back_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAddToFavorites"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
-        app:layout_constraintVertical_bias="0.703"
-        tools:text="@string/fragment_details_button_text" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
