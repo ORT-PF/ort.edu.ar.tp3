@@ -21,6 +21,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.example.ortexamentp3.activities.MainActivity
+import com.example.ortexamentp3.activities.MainActivity.Companion.getVerPersonajes
 
 
 class HomeFragment : Fragment(), OnCharacterClickedListener {
@@ -49,15 +50,15 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
                 response: Response<CharacterListResponse>
             ) {
                 if (response.isSuccessful) {
-                    val characterList = response.body()?.results
 
-                    val adapter = characterList?.let { CharacterAdapter(it,this@HomeFragment)}
-                    recyclerView.layoutManager = LinearLayoutManager(context)
-                    recyclerView.adapter = adapter
-
+                    if  (getVerPersonajes()){
+                        val characterList = response.body()?.results
+                        val adapter = characterList?.let { CharacterAdapter(it,this@HomeFragment)}
+                        recyclerView.layoutManager = LinearLayoutManager(context)
+                        recyclerView.adapter = adapter
+                    }
                 }
             }
-
             override fun onFailure(call: Call<CharacterListResponse>, t: Throwable) {
                 Toast.makeText(activity, t.message, Toast.LENGTH_LONG).show()
 

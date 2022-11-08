@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.activities.MainActivity
+import com.example.ortexamentp3.activities.MainActivity.Companion.setQuitarBoton
+import com.example.ortexamentp3.activities.MainActivity.Companion.setVerPersonajes
 
 class SettingsFragment : Fragment() {
 
@@ -19,7 +21,8 @@ class SettingsFragment : Fragment() {
     lateinit var view1: View
     lateinit var buttonGoToHome: Button
     lateinit var nightMode: Switch
-
+    lateinit var quitarPersonajes: Switch
+    lateinit var verBoton: Switch
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +33,8 @@ class SettingsFragment : Fragment() {
 
         buttonGoToHome = view1.findViewById(R.id.backButton)
         nightMode = view1.findViewById(R.id.night_mode)
-
-
+        quitarPersonajes = view1.findViewById(R.id.ver_personajes)
+        verBoton = view1.findViewById(R.id.quitar_boton_favoritos)
         (activity as MainActivity?)!!.hideMenu()
 
         buttonGoToHome.setOnClickListener {
@@ -51,13 +54,28 @@ class SettingsFragment : Fragment() {
 
 
         nightMode.setOnCheckedChangeListener { _, _ ->
-            if (nightMode.isChecked){
+            if (nightMode.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                }else{
+            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
 
+        quitarPersonajes.setOnCheckedChangeListener { _, _ ->
+            if (quitarPersonajes.isChecked) {
+                setVerPersonajes(false)
+            } else {
+                setVerPersonajes(true)
+            }
+        }
+
+        verBoton.setOnCheckedChangeListener{_,_ ->
+            if (verBoton.isChecked){
+                setQuitarBoton(false)
+            }else{
+                setQuitarBoton(true)
+            }
+        }
     }
 
     override fun onDestroyView() {
