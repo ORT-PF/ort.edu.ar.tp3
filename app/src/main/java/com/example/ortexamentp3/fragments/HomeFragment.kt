@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ortexamentp3.services.APIServices.APIResponses.Character.CharacterListResponse
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity.Companion.verPersonajes
 import com.example.ortexamentp3.adapter.CharacterAdapter
 import com.example.ortexamentp3.services.APIServices.RetrofitClientBuilder
 import com.example.ortexamentp3.services.APIServices.RetrofitContracts.RetrofitCharacterList
@@ -38,7 +39,6 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val retrofitClient = RetrofitClientBuilder.buildService(RetrofitCharacterList::class.java)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
 
@@ -50,12 +50,12 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
                 response: Response<CharacterListResponse>
             ) {
                 if (response.isSuccessful) {
-                    val characterList = response.body()?.results
-
-                    val adapter = characterList?.let { CharacterAdapter(it,this@HomeFragment)}
-                    recyclerView.layoutManager = LinearLayoutManager(context)
-                    recyclerView.adapter = adapter
-
+                    if (verPersonajes){
+                        val characterList = response.body()?.results
+                        val adapter = characterList?.let { CharacterAdapter(it,this@HomeFragment)}
+                        recyclerView.layoutManager = LinearLayoutManager(context)
+                        recyclerView.adapter = adapter
+                    }
                 }
             }
 

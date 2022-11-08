@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_favourites.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/facun/AndroidStudioProjects/PARCIAL TPR3 EL POSTA/ort.edu.ar.tp3/app/src/main/res/layout/fragment_welcome.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/facun/AndroidStudioProjects/Parcial Taller De Programacion 3/ort.edu.ar.tp3/app/src/main/res/drawable/ic_luz.xml" value="0.176" />
         <entry key="..\:/Users/facun/AndroidStudioProjects/Parcial Taller De Programacion 3/ort.edu.ar.tp3/app/src/main/res/drawable/ic_night.xml" value="0.176" />
         <entry key="..\:/Users/facun/AndroidStudioProjects/Parcial Taller De Programacion 3/ort.edu.ar.tp3/app/src/main/res/layout/fragment_home.xml" value="0.1" />

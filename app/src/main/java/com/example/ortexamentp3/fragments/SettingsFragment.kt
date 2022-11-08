@@ -10,8 +10,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity.Companion.verPersonajes
+
 class SettingsFragment : Fragment() {
 
 
@@ -20,6 +24,9 @@ class SettingsFragment : Fragment() {
     lateinit var nightMode: Switch
     lateinit var sacarFondo: Switch
     lateinit var fondoSettings: ImageView
+    lateinit var quitarPersonajes: Switch
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +37,9 @@ class SettingsFragment : Fragment() {
         nightMode = view1.findViewById(R.id.night_mode)
         sacarFondo = view1.findViewById(R.id.sacar_fondo)
         fondoSettings = view1.findViewById(R.id.imagen_settings)
+        quitarPersonajes = view1.findViewById(R.id.quitar_personajes)
+
+
 
         return view1
     }
@@ -58,6 +68,9 @@ class SettingsFragment : Fragment() {
             }
         }
 
+        quitarPersonajes.setOnCheckedChangeListener{_,_ ->
+            verPersonajes = !quitarPersonajes.isChecked
+        }
 
 
     }

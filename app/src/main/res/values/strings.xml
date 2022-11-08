@@ -9,7 +9,7 @@
     <string name="fragment_login_button_text">Continuar</string>
     <string name="fragment_details_button_text">Volver</string>
     <string name="night_mode"> Night mode </string>
-    <string name="search_enabled"> Buscador habilitado  </string>
+    <string name="cambiar_fragment"> Quitar personajes  </string>
     <string name="sacar_fondo_settings"> Quitar el fondo  </string>
     <string name="settings"> Settings  </string>
 </resources>
