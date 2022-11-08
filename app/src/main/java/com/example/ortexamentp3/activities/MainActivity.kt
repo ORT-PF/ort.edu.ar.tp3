@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     companion object{
         var verPersonajes: Boolean = true
-
+        var verBotonFavoritos: Boolean = true
     }
 
         private fun setupDrawerLayout() {

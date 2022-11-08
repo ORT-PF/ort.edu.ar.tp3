@@ -10,10 +10,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity.Companion.verBotonFavoritos
 import com.example.ortexamentp3.activities.MainActivity.Companion.verPersonajes
 
 class SettingsFragment : Fragment() {
@@ -35,7 +34,7 @@ class SettingsFragment : Fragment() {
         view1 = inflater.inflate(R.layout.fragment_settings, container, false)
         buttonGoToHome = view1.findViewById(R.id.backButton)
         nightMode = view1.findViewById(R.id.night_mode)
-        sacarFondo = view1.findViewById(R.id.sacar_fondo)
+        sacarFondo = view1.findViewById(R.id.sacar_boton_favoritos)
         fondoSettings = view1.findViewById(R.id.imagen_settings)
         quitarPersonajes = view1.findViewById(R.id.quitar_personajes)
 
@@ -61,11 +60,7 @@ class SettingsFragment : Fragment() {
         }
 
         sacarFondo.setOnCheckedChangeListener { _, _ ->
-            if (sacarFondo.isChecked){
-                fondoSettings.visibility = View.INVISIBLE
-            }else{
-                fondoSettings.visibility = View.VISIBLE
-            }
+            verBotonFavoritos = !sacarFondo.isChecked
         }
 
         quitarPersonajes.setOnCheckedChangeListener{_,_ ->

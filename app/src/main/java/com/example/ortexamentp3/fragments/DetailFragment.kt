@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.ortexamentp3.R
+import com.example.ortexamentp3.activities.MainActivity.Companion.verBotonFavoritos
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.repositories.AppRepository
 
@@ -59,10 +60,15 @@ class DetailFragment : Fragment() {
             .load(imgUrl)
             .into(characterImage)
 
-        buttonAddToFav.setOnClickListener {
-            val favCharId = appRepository.insertFavouriteCharacter(FavouriteCharacter(0, userId!!.toInt(), character.id!!.toInt()))
-            navigateToHomeFragment()
+        if (verBotonFavoritos){
+            buttonAddToFav.setOnClickListener {
+                val favCharId = appRepository.insertFavouriteCharacter(FavouriteCharacter(0, userId!!.toInt(), character.id!!.toInt()))
+                navigateToHomeFragment()
+            }
+        }else{
+            buttonAddToFav.visibility = View.GONE
         }
+
 
         backButton.setOnClickListener{
             navigateToHomeFragment()
