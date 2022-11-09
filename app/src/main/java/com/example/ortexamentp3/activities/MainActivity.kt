@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.ortexamentp3.R
 import com.google.android.material.navigation.NavigationView
+import java.security.KeyStore
 
 
 class MainActivity : AppCompatActivity(), DrawerController {
@@ -58,8 +59,19 @@ class MainActivity : AppCompatActivity(), DrawerController {
 
     companion object{
         private var currentUserId : Long? = null
+        private var quitarBoton : Boolean = true
 
-           fun setCurrentUserId(userId : Long){
+
+        fun setQuitarBoton(valor: Boolean){
+            this.quitarBoton = valor
+        }
+
+        fun getQuitarBoton() : Boolean{
+            return quitarBoton;
+        }
+
+
+        fun setCurrentUserId(userId : Long){
                if(currentUserId == null){
                    currentUserId = userId
                }
