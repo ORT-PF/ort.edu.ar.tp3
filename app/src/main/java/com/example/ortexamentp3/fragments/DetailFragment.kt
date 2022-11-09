@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.activities.MainActivity
+import com.example.ortexamentp3.activities.MainActivity.Companion.getQuitarBoton
 import com.example.ortexamentp3.domain.models.FavouriteCharacter
 import com.example.ortexamentp3.domain.repositories.AppRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -63,10 +64,16 @@ class DetailFragment : Fragment() {
             .load(imgUrl)
             .into(characterImage)
 
-        buttonAddToFav.setOnClickListener {
-            val favCharId = appRepository.insertFavouriteCharacter(FavouriteCharacter(0, userId!!.toInt(), character.id!!.toInt()))
-            navigateToHomeFragment()
+            buttonAddToFav.setOnClickListener {
+                val favCharId = appRepository.insertFavouriteCharacter(FavouriteCharacter(0, userId!!.toInt(), character.id!!.toInt()))
+                navigateToHomeFragment()
+
+            }
+        if (getQuitarBoton()) {
+            buttonAddToFav.visibility = View.GONE
         }
+
+
 
         backButton.setOnClickListener{
             navigateToHomeFragment()

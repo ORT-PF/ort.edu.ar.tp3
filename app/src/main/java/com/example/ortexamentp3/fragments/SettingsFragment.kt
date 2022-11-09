@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.ortexamentp3.R
 import com.example.ortexamentp3.activities.MainActivity
+import com.example.ortexamentp3.activities.MainActivity.Companion.setQuitarBoton
 
 class SettingsFragment : Fragment() {
 
@@ -19,7 +20,11 @@ class SettingsFragment : Fragment() {
     lateinit var view1: View
     lateinit var buttonGoToHome: Button
     lateinit var nightMode: Switch
+    lateinit var toggleFav : Switch
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +33,7 @@ class SettingsFragment : Fragment() {
         view1 = inflater.inflate(R.layout.fragment_settings, container, false)
 
 
+        toggleFav = view1.findViewById(R.id.add_favourites)
         buttonGoToHome = view1.findViewById(R.id.backButton)
         nightMode = view1.findViewById(R.id.night_mode)
 
@@ -44,10 +50,9 @@ class SettingsFragment : Fragment() {
         return view1
     }
 
+
     override fun onStart() {
         super.onStart()
-
-
 
 
         nightMode.setOnCheckedChangeListener { _, _ ->
@@ -57,6 +62,16 @@ class SettingsFragment : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
+
+        toggleFav.setOnCheckedChangeListener { _, _ ->
+            if (toggleFav.isChecked){
+                setQuitarBoton(false)
+
+            }else{
+                setQuitarBoton(true)
+            }
+        }
+
 
     }
 
