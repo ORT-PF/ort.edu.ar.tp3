@@ -46,7 +46,7 @@ class DetailFragment : Fragment() {
         val textViewName    = view.findViewById<TextView>(R.id.textViewDetailName)
         val textViewSpecies = view.findViewById<TextView>(R.id.textViewDetailSpecies)
         val textViewOrigin  = view.findViewById<TextView>(R.id.textViewDetailOrigin)
-        val buttonAddToFav  = view.findViewById<FloatingAc>(R.id.btnAddToFavourite)
+        val buttonAddToFav  = view.findViewById<FloatingActionButton>(R.id.btnAddToFavourite)
         val backButton  = view.findViewById<Button>(R.id.backToHomeFragment)
 
         textViewStatus.text  = character.status
